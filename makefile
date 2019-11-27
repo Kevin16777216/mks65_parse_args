@@ -5,9 +5,12 @@ else
 endif
 
 all: main.o
-	$(CC) -o program main.c
+	$(CC) -o program main.o
 
-run: 
+main.o: main.c main.h
+	$(CC) -c main.c
+
+run:
 	./program
 
 clean:
